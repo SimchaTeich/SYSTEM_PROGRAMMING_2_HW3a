@@ -23,7 +23,7 @@ int Fraction::denominator() const
 }
 
 
-ostream& operator<<(ostream& s, const Fraction& fraction)
+ostream& ariel::operator<<(ostream& s, const Fraction& fraction)
 {
-    s << fraction.numerator() << "/" << fraction.denominator() << endl;
+    return s << fraction._numerator << "/" << fraction._denominator;
 }
