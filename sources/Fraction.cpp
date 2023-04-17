@@ -130,6 +130,24 @@ Fraction ariel::operator*(const double& value, const Fraction& f)
 }
 
 
+Fraction ariel::operator/(const Fraction& f1, const Fraction& f2)
+{   
+    return f1 * Fraction(f2._denominator, f2._numerator);
+}
+
+
+Fraction ariel::operator/(const Fraction& f, const double& value)
+{
+    return f / Fraction::fractionFromDouble(value);
+}
+
+
+Fraction ariel::operator/(const double& value, const Fraction& f)
+{
+    return  Fraction::fractionFromDouble(value) / f;
+}
+
+
 ostream& ariel::operator<<(ostream& s, const Fraction& fraction)
 {
     return s << fraction._numerator << "/" << fraction._denominator;
