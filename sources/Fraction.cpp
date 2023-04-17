@@ -174,15 +174,21 @@ bool ariel::operator==(const double& value, const Fraction& f)
 }
 
 
-bool Fraction::operator<(const Fraction& other) const
+bool ariel::operator<(const Fraction& f1, const Fraction& f2)
 {
-    return _numerator * other._denominator < _denominator * other._numerator;
+     return f1._numerator * f2._denominator < f1._denominator * f2._numerator;
 }
 
 
-bool Fraction::operator>(const Fraction& other) const
+bool ariel::operator<(const Fraction& f, const double& value)
 {
-    return _numerator * other._denominator > _denominator * other._numerator;
+     return f < Fraction::fractionFromDouble(value);
+}
+
+
+bool ariel::operator<(const double& value, const Fraction& f)
+{
+     return Fraction::fractionFromDouble(value) < f;
 }
 
 

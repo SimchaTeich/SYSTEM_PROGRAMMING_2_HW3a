@@ -92,7 +92,14 @@ namespace ariel
         friend bool operator==(const double& value, const Fraction& f);
         
         
-        // bool operator<(const Fraction& other) const;
+        /*
+        overloading operator<
+        */
+        friend bool operator<(const Fraction& f1, const Fraction& f2);
+        friend bool operator<(const Fraction& f, const double& value);
+        friend bool operator<(const double& value, const Fraction& f);
+
+
         // bool operator>(const Fraction& other) const;
         // bool operator<=(const Fraction& other) const;
         // bool operator>=(const Fraction& other) const;
