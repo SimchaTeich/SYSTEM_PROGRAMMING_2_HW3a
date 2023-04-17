@@ -32,6 +32,22 @@ void Fraction::recude()
 }
 
 
+Fraction Fraction::FractionFromDouble(double value)
+{
+    int denominator = 1;
+
+    while(value - (int)value != 0)
+    {
+        denominator *= 10;
+        value *= 10;
+    }
+
+    Fraction f(value, denominator);
+    f.recude();
+    return f;
+}
+
+
 int Fraction::numerator() const
 {
     return _numerator;
