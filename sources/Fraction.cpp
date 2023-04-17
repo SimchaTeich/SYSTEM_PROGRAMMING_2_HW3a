@@ -6,6 +6,11 @@ using std::endl;
 
 Fraction::Fraction(const int numerator, const int denominator)
 {
+    if(0 == denominator)
+    {
+        throw "ERROR: denominator can't be zero!";
+    }
+    
     _numerator = numerator;
     _denominator = denominator;
 }
