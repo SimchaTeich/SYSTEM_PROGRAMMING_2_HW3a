@@ -3,7 +3,7 @@
 #include "sources/Fraction.cpp"
 #include <stdexcept>
 
-//using namespace ariel;
+using namespace ariel;
 
 
 TEST_CASE("C'TOR")
