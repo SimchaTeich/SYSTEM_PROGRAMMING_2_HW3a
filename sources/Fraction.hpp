@@ -75,6 +75,15 @@ namespace ariel
 
 
         /*
+        overloading operator/
+        note: the new Fraction will return will be in reduced form.
+        */
+        friend Fraction operator/(const Fraction& f1, const Fraction& f2);
+        friend Fraction operator/(const Fraction& f, const double& value);
+        friend Fraction operator/(const double& value, const Fraction& f);
+
+
+        /*
         Prints Fraction object into output stream.
         For example, [cout << Fraction(1,2)] will
         print: "1\2" into cout stream.
