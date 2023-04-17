@@ -14,6 +14,15 @@ namespace ariel
         int _numerator;
         int _denominator;
 
+
+        /*
+        Reduce the fraction.
+        For example: Fraction(2,4) after
+        reduce will hold 1 in _numerator
+        and 2 in _denominator.
+        */
+        void recude();
+
     public:
         /*
         C'tor
