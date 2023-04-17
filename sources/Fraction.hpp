@@ -23,6 +23,17 @@ namespace ariel
         */
         void recude();
 
+
+        /*
+        Create a reduced Fraction according to a double.
+        (up to 3 digits beyond the desimal point for acuracy)
+        For example: 12.34 --> Fraction(1234/100) --> Fraction(617/50)
+                     0.567 --> Fractiob(567/1000) --> Fraction(567/100)
+        input: double
+        output: reduced Fraction
+        */
+        Fraction FractionFromDouble(double value);
+
     public:
         /*
         C'tor
