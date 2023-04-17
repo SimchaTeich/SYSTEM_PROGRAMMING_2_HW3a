@@ -76,7 +76,7 @@ Fraction ariel::operator+(const Fraction& f, const double& value)
 
 Fraction ariel::operator+(const double& value, const Fraction& f)
 {
-    return Fraction::fractionFromDouble(value) + f;
+    return  f + value;
 }
 
 
