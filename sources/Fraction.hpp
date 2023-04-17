@@ -21,9 +21,20 @@ namespace ariel
         */
         Fraction(const int numerator, const int denominator);
 
+
         // getters
         int numerator() const;
         int denominator() const;
+
+
+        /*
+        overloading operator+
+        note: the new Fraction will return will be in reduced form.
+        */
+        friend Fraction operator+(const Fraction& f1, const Fraction& f2);
+        friend Fraction operator+(const Fraction& f, const double& value);
+        friend Fraction operator+(const double& value, const Fraction& f);
+
 
         /*
         Prints Fraction object into output stream.
