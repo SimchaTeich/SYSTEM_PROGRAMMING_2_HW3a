@@ -80,6 +80,19 @@ Fraction ariel::operator+(const double& value, const Fraction& f)
 }
 
 
+Fraction ariel::operator-(const Fraction& f1, const Fraction& f2)
+{
+    int newNumorator = f1._numerator * f2._denominator - f2._numerator * f1._denominator;
+    int newDenominator = f1._denominator * f2._denominator;
+    
+    // create the reduced form
+    Fraction newFraction(newNumorator, newDenominator);
+    newFraction.recude();
+
+    return newFraction;
+}
+
+
 ostream& ariel::operator<<(ostream& s, const Fraction& fraction)
 {
     return s << fraction._numerator << "/" << fraction._denominator;
