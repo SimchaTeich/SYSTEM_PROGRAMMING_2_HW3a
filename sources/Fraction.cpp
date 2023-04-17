@@ -70,8 +70,13 @@ Fraction ariel::operator+(const Fraction& f1, const Fraction& f2)
 
 Fraction ariel::operator+(const Fraction& f, const double& value)
 {
-    std::cout << Fraction::fractionFromDouble(value) << std::endl;//
     return f + Fraction::fractionFromDouble(value);
+}
+
+
+Fraction ariel::operator+(const double& value, const Fraction& f)
+{
+    return Fraction::fractionFromDouble(value) + f;
 }
 
 
