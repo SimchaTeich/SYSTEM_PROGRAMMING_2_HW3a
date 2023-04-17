@@ -11,6 +11,18 @@ Fraction::Fraction(const int numerator, const int denominator)
 }
 
 
+int Fraction::numerator() const
+{
+    return _numerator;
+}
+
+
+int Fraction::denominator() const
+{
+    return _denominator;
+}
+
+
 ostream& operator<<(ostream& s, const Fraction& fraction)
 {
     s << fraction.numerator() << "/" << fraction.denominator() << endl;

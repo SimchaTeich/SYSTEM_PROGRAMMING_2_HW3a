@@ -4,7 +4,6 @@
 #include <iostream>
 
 using std::ostream;
-using std::endl;
 
 
 namespace ariel
@@ -21,6 +20,10 @@ namespace ariel
         input: the integers for numerator and denominator.
         */
         Fraction(const int numerator, const int denominator);
+
+        // getters
+        int numerator() const;
+        int denominator() const;
 
         /*
         Prints Fraction object into output stream.
