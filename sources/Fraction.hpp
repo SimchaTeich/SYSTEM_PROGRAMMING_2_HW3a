@@ -83,14 +83,19 @@ namespace ariel
         friend Fraction operator/(const double& value, const Fraction& f);
 
 
-        /*
-        operator==
-        Returns true if two Fraction are equal.
-        For example: 1/2 == 1/2 is true.
-                     1/2 == 2/4 is true.
-                     1/2 == 1/3 is false.
+       /*
+        overloading operator==
+        note: fraction 1/2 and fraction 2/4 are equals.
         */
-        bool operator==(const Fraction& other) const;
+        friend bool operator==(const Fraction& f1, const Fraction& f2);
+        friend bool operator==(const Fraction& f, const double& value);
+        friend bool operator==(const double& value, const Fraction& f);
+        
+        
+        // bool operator<(const Fraction& other) const;
+        // bool operator>(const Fraction& other) const;
+        // bool operator<=(const Fraction& other) const;
+        // bool operator>=(const Fraction& other) const;
 
 
         /*
