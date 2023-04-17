@@ -1,3 +1,4 @@
+//https://www.learncpp.com/cpp-tutorial/overloading-the-arithmetic-operators-using-friend-functions/
 #include "Fraction.hpp"
 
 using namespace ariel;
@@ -145,6 +146,19 @@ Fraction ariel::operator/(const Fraction& f, const double& value)
 Fraction ariel::operator/(const double& value, const Fraction& f)
 {
     return  Fraction::fractionFromDouble(value) / f;
+}
+
+
+bool Fraction::operator==(const Fraction& other) const
+{
+    Fraction reducedLeft(_numerator, _denominator);
+    reducedLeft.recude();
+
+    Fraction reducedRight(other._numerator, other._denominator);
+    reducedRight.recude();
+
+    return reducedLeft._numerator == reducedRight._numerator && 
+        reducedLeft._denominator == reducedRight._denominator;
 }
 
 

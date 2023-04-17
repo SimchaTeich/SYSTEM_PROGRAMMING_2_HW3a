@@ -84,6 +84,16 @@ namespace ariel
 
 
         /*
+        operator==
+        Returns true if two Fraction are equal.
+        For example: 1/2 == 1/2 is true.
+                     1/2 == 2/4 is true.
+                     1/2 == 1/3 is false.
+        */
+        bool operator==(const Fraction& other) const;
+
+
+        /*
         Prints Fraction object into output stream.
         For example, [cout << Fraction(1,2)] will
         print: "1\2" into cout stream.
