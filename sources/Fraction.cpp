@@ -32,7 +32,7 @@ void Fraction::recude()
 }
 
 
-Fraction Fraction::FractionFromDouble(double value)
+Fraction Fraction::fractionFromDouble(double value)
 {
     int denominator = 1;
 
@@ -50,7 +50,7 @@ Fraction Fraction::FractionFromDouble(double value)
 
 int Fraction::numerator() const
 {
-    return _numerator;
+    return _numerator;   
 }
 
 
@@ -70,6 +70,12 @@ Fraction ariel::operator+(const Fraction& f1, const Fraction& f2)
     newFraction.recude();
 
     return newFraction;
+}
+
+
+Fraction ariel::operator+(const Fraction& f, const double& value)
+{
+    return f + Fraction::fractionFromDouble(value);
 }
 
 
