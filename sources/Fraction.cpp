@@ -34,13 +34,8 @@ void Fraction::recude()
 
 Fraction Fraction::fractionFromDouble(double value)
 {
-    int denominator = 1;
-
-    while(value - (int)value != 0)
-    {
-        denominator *= 10;
-        value *= 10;
-    }
+    int denominator = 1000;
+    value *= 1000;
 
     Fraction f(value, denominator);
     f.recude();
@@ -75,6 +70,7 @@ Fraction ariel::operator+(const Fraction& f1, const Fraction& f2)
 
 Fraction ariel::operator+(const Fraction& f, const double& value)
 {
+    std::cout << Fraction::fractionFromDouble(value) << std::endl;//
     return f + Fraction::fractionFromDouble(value);
 }
 
