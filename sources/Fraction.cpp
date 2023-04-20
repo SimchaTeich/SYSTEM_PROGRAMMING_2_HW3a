@@ -278,3 +278,9 @@ ostream& ariel::operator<<(ostream& s, const Fraction& fraction)
 {
     return s << fraction._numerator << "/" << fraction._denominator;
 }
+
+
+istream& ariel::operator>>(istream& s, Fraction& fraction)
+{
+    return s >> fraction._numerator >> fraction._denominator;
+}

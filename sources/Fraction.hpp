@@ -4,6 +4,7 @@
 #include <iostream>
 
 using std::ostream;
+using std::istream;
 
 
 namespace ariel
@@ -144,6 +145,14 @@ namespace ariel
         output: the stream after changes.
         */
         friend ostream& operator<<(ostream& s, const Fraction& fraction);
+
+
+        /*
+        Take two integres into Fraction from input stream.
+        input: stream and Fraction object.
+        output: the stream after changes.
+        */
+        friend istream& operator>>(istream& is, Fraction& fraction);
     };
 };
 
