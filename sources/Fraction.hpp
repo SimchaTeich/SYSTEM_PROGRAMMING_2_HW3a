@@ -129,6 +129,12 @@ namespace ariel
         friend Fraction& operator++(Fraction& f);      // pre
         friend Fraction& operator++(Fraction& f, int); // post
 
+        /*
+        overloading operator--
+        */
+        friend Fraction& operator--(Fraction& f);      // pre
+        friend Fraction& operator--(Fraction& f, int); // post
+
 
         /*
         Prints Fraction object into output stream.

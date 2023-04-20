@@ -260,6 +260,20 @@ Fraction& ariel::operator++(Fraction& f, int)
 }
 
 
+Fraction& ariel::operator--(Fraction& f)
+{
+    f._numerator -= f._denominator;
+    return f;
+}
+
+
+Fraction& ariel::operator--(Fraction& f, int)
+{
+    f._numerator -= f._denominator;
+    return f;
+}
+
+
 ostream& ariel::operator<<(ostream& s, const Fraction& fraction)
 {
     return s << fraction._numerator << "/" << fraction._denominator;
