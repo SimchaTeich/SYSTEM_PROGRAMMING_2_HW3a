@@ -40,7 +40,7 @@ namespace ariel
         C'tor
         input: the integers for numerator and denominator.
         */
-        Fraction(const int numerator, const int denominator);
+        Fraction(const int& numerator, const int& denominator);
 
 
         // getters
@@ -52,89 +52,89 @@ namespace ariel
         overloading operator+
         note: the new Fraction will return will be in reduced form.
         */
-        friend Fraction operator+(const Fraction& f1, const Fraction& f2);
-        friend Fraction operator+(const Fraction& f, const double& value);
-        friend Fraction operator+(const double& value, const Fraction& f);
+        friend Fraction operator+(const Fraction& frac1, const Fraction& frac2);
+        friend Fraction operator+(const Fraction& fraction, const double& value);
+        friend Fraction operator+(const double& value, const Fraction& fraction);
 
 
         /*
         overloading operator-
         note: the new Fraction will return will be in reduced form.
         */
-        friend Fraction operator-(const Fraction& f1, const Fraction& f2);
-        friend Fraction operator-(const Fraction& f, const double& value);
-        friend Fraction operator-(const double& value, const Fraction& f);
+        friend Fraction operator-(const Fraction& frac1, const Fraction& frac2);
+        friend Fraction operator-(const Fraction& fraction, const double& value);
+        friend Fraction operator-(const double& value, const Fraction& fraction);
 
 
         /*
         overloading operator*
         note: the new Fraction will return will be in reduced form.
         */
-        friend Fraction operator*(const Fraction& f1, const Fraction& f2);
-        friend Fraction operator*(const Fraction& f, const double& value);
-        friend Fraction operator*(const double& value, const Fraction& f);
+        friend Fraction operator*(const Fraction& frac1, const Fraction& frac2);
+        friend Fraction operator*(const Fraction& fraction, const double& value);
+        friend Fraction operator*(const double& value, const Fraction& fraction);
 
 
         /*
         overloading operator/
         note: the new Fraction will return will be in reduced form.
         */
-        friend Fraction operator/(const Fraction& f1, const Fraction& f2);
-        friend Fraction operator/(const Fraction& f, const double& value);
-        friend Fraction operator/(const double& value, const Fraction& f);
+        friend Fraction operator/(const Fraction& frac1, const Fraction& frac2);
+        friend Fraction operator/(const Fraction& fraction, const double& value);
+        friend Fraction operator/(const double& value, const Fraction& fraction);
 
 
        /*
         overloading operator==
         note: fraction 1/2 and fraction 2/4 are equals.
         */
-        friend bool operator==(const Fraction& f1, const Fraction& f2);
-        friend bool operator==(const Fraction& f, const double& value);
-        friend bool operator==(const double& value, const Fraction& f);
+        friend bool operator==(const Fraction& frac1, const Fraction& frac2);
+        friend bool operator==(const Fraction& fraction, const double& value);
+        friend bool operator==(const double& value, const Fraction& fraction);
         
         
         /*
         overloading operator<
         */
-        friend bool operator<(const Fraction& f1, const Fraction& f2);
-        friend bool operator<(const Fraction& f, const double& value);
-        friend bool operator<(const double& value, const Fraction& f);
+        friend bool operator<(const Fraction& frac1, const Fraction& frac2);
+        friend bool operator<(const Fraction& fraction, const double& value);
+        friend bool operator<(const double& value, const Fraction& fraction);
 
 
         /*
         overloading operator>
         */
-        friend bool operator>(const Fraction& f1, const Fraction& f2);
-        friend bool operator>(const Fraction& f, const double& value);
-        friend bool operator>(const double& value, const Fraction& f);
+        friend bool operator>(const Fraction& frac1, const Fraction& frac2);
+        friend bool operator>(const Fraction& fraction, const double& value);
+        friend bool operator>(const double& value, const Fraction& fraction);
         
         
         /*
         overloading operator<=
         */
-        friend bool operator<=(const Fraction& f1, const Fraction& f2);
-        friend bool operator<=(const Fraction& f, const double& value);
-        friend bool operator<=(const double& value, const Fraction& f);
+        friend bool operator<=(const Fraction& frac1, const Fraction& frac2);
+        friend bool operator<=(const Fraction& fraction, const double& value);
+        friend bool operator<=(const double& value, const Fraction& fraction);
 
 
         /*
         overloading operator>=
         */
-        friend bool operator>=(const Fraction& f1, const Fraction& f2);
-        friend bool operator>=(const Fraction& f, const double& value);
-        friend bool operator>=(const double& value, const Fraction& f);
+        friend bool operator>=(const Fraction& frac1, const Fraction& frac2);
+        friend bool operator>=(const Fraction& fraction, const double& value);
+        friend bool operator>=(const double& value, const Fraction& fraction);
 
         /*
         overloading operator++
         */
-        friend Fraction& operator++(Fraction& f);      // pre
-        friend Fraction& operator++(Fraction& f, int); // post
+        friend Fraction& operator++(Fraction& fraction);      // pre
+        friend Fraction& operator++(Fraction& fraction, int); // post
 
         /*
         overloading operator--
         */
-        friend Fraction& operator--(Fraction& f);      // pre
-        friend Fraction& operator--(Fraction& f, int); // post
+        friend Fraction& operator--(Fraction& fraction);      // pre
+        friend Fraction& operator--(Fraction& fraction, int); // post
 
 
         /*
@@ -144,7 +144,7 @@ namespace ariel
         input: stream and Fraction object.
         output: the stream after changes.
         */
-        friend ostream& operator<<(ostream& s, const Fraction& fraction);
+        friend ostream& operator<<(ostream& output, const Fraction& fraction);
 
 
         /*
@@ -152,7 +152,7 @@ namespace ariel
         input: stream and Fraction object.
         output: the stream after changes.
         */
-        friend istream& operator>>(istream& is, Fraction& fraction);
+        friend istream& operator>>(istream& input, Fraction& fraction);
     };
 };
 

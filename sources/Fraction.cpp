@@ -5,7 +5,7 @@ using namespace ariel;
 using std::endl;
 
 
-Fraction::Fraction(const int numerator, const int denominator)
+Fraction::Fraction(const int& numerator, const int& denominator)
 {
     if(0 == denominator)
     {
@@ -56,10 +56,10 @@ int Fraction::denominator() const
 }
 
 
-Fraction ariel::operator+(const Fraction& f1, const Fraction& f2)
+Fraction ariel::operator+(const Fraction& frac1, const Fraction& frac2)
 {
-    int newNumorator = f1._numerator * f2._denominator + f2._numerator * f1._denominator;
-    int newDenominator = f1._denominator * f2._denominator;
+    int newNumorator = frac1._numerator * frac2._denominator + frac2._numerator * frac1._denominator;
+    int newDenominator = frac1._denominator * frac2._denominator;
     
     // create the reduced form
     Fraction newFraction(newNumorator, newDenominator);
@@ -69,22 +69,22 @@ Fraction ariel::operator+(const Fraction& f1, const Fraction& f2)
 }
 
 
-Fraction ariel::operator+(const Fraction& f, const double& value)
+Fraction ariel::operator+(const Fraction& fraction, const double& value)
 {
-    return f + Fraction::fractionFromDouble(value);
+    return fraction + Fraction::fractionFromDouble(value);
 }
 
 
-Fraction ariel::operator+(const double& value, const Fraction& f)
+Fraction ariel::operator+(const double& value, const Fraction& fraction)
 {
-    return  f + value;
+    return  fraction + value;
 }
 
 
-Fraction ariel::operator-(const Fraction& f1, const Fraction& f2)
+Fraction ariel::operator-(const Fraction& frac1, const Fraction& frac2)
 {
-    int newNumorator = f1._numerator * f2._denominator - f2._numerator * f1._denominator;
-    int newDenominator = f1._denominator * f2._denominator;
+    int newNumorator = frac1._numerator * frac2._denominator - frac2._numerator * frac1._denominator;
+    int newDenominator = frac1._denominator * frac2._denominator;
     
     // create the reduced form
     Fraction newFraction(newNumorator, newDenominator);
@@ -94,22 +94,22 @@ Fraction ariel::operator-(const Fraction& f1, const Fraction& f2)
 }
 
 
-Fraction ariel::operator-(const Fraction& f, const double& value)
+Fraction ariel::operator-(const Fraction& fraction, const double& value)
 {
-    return f - Fraction::fractionFromDouble(value);
+    return fraction - Fraction::fractionFromDouble(value);
 }
 
 
-Fraction ariel::operator-(const double& value, const Fraction& f)
+Fraction ariel::operator-(const double& value, const Fraction& fraction)
 {
-    return  Fraction::fractionFromDouble(value) - f;
+    return  Fraction::fractionFromDouble(value) - fraction;
 }
 
 
-Fraction ariel::operator*(const Fraction& f1, const Fraction& f2)
+Fraction ariel::operator*(const Fraction& frac1, const Fraction& frac2)
 {
-    int newNumorator = f1._numerator * f2._numerator;
-    int newDenominator = f1._denominator * f2._denominator;
+    int newNumorator = frac1._numerator * frac2._numerator;
+    int newDenominator = frac1._denominator * frac2._denominator;
     
     // create the reduced form
     Fraction newFraction(newNumorator, newDenominator);
@@ -119,42 +119,47 @@ Fraction ariel::operator*(const Fraction& f1, const Fraction& f2)
 }
 
 
-Fraction ariel::operator*(const Fraction& f, const double& value)
+Fraction ariel::operator*(const Fraction& fraction, const double& value)
 {
-    return f * Fraction::fractionFromDouble(value);
+    return fraction * Fraction::fractionFromDouble(value);
 }
 
 
-Fraction ariel::operator*(const double& value, const Fraction& f)
+Fraction ariel::operator*(const double& value, const Fraction& fraction)
 {
-    return  f * value;
+    return  fraction * value;
 }
 
 
-Fraction ariel::operator/(const Fraction& f1, const Fraction& f2)
-{   
-    return f1 * Fraction(f2._denominator, f2._numerator);
+Fraction ariel::operator/(const Fraction& frac1, const Fraction& frac2)
+{
+    if(frac2._numerator == 0)
+    {
+        throw "Error: can't divide by zero!";
+    }
+
+    return frac1 * Fraction(frac2._denominator, frac2._numerator);
 }
 
 
-Fraction ariel::operator/(const Fraction& f, const double& value)
+Fraction ariel::operator/(const Fraction& fraction, const double& value)
 {
-    return f / Fraction::fractionFromDouble(value);
+    return fraction / Fraction::fractionFromDouble(value);
 }
 
 
-Fraction ariel::operator/(const double& value, const Fraction& f)
+Fraction ariel::operator/(const double& value, const Fraction& fraction)
 {
-    return  Fraction::fractionFromDouble(value) / f;
+    return  Fraction::fractionFromDouble(value) / fraction;
 }
 
 
-bool ariel::operator==(const Fraction& f1, const Fraction& f2)
+bool ariel::operator==(const Fraction& frac1, const Fraction& frac2)
 {
-    Fraction reducedLeft(f1._numerator, f1._denominator);
+    Fraction reducedLeft(frac1._numerator, frac1._denominator);
     reducedLeft.recude();
 
-    Fraction reducedRight(f2._numerator, f2._denominator);
+    Fraction reducedRight(frac2._numerator, frac2._denominator);
     reducedRight.recude();
 
     return reducedLeft._numerator == reducedRight._numerator && 
@@ -162,125 +167,125 @@ bool ariel::operator==(const Fraction& f1, const Fraction& f2)
 }
 
 
-bool ariel::operator==(const Fraction& f, const double& value)
+bool ariel::operator==(const Fraction& fraction, const double& value)
 {
-    return f == Fraction::fractionFromDouble(value);
+    return fraction == Fraction::fractionFromDouble(value);
 }
 
 
-bool ariel::operator==(const double& value, const Fraction& f)
+bool ariel::operator==(const double& value, const Fraction& fraction)
 {
-    return f == value;
+    return fraction == value;
 }
 
 
-bool ariel::operator<(const Fraction& f1, const Fraction& f2)
+bool ariel::operator<(const Fraction& frac1, const Fraction& frac2)
 {
-     return f1._numerator * f2._denominator < f1._denominator * f2._numerator;
+     return frac1._numerator * frac2._denominator < frac1._denominator * frac2._numerator;
 }
 
 
-bool ariel::operator<(const Fraction& f, const double& value)
+bool ariel::operator<(const Fraction& fraction, const double& value)
 {
-     return f < Fraction::fractionFromDouble(value);
+     return fraction < Fraction::fractionFromDouble(value);
 }
 
 
-bool ariel::operator<(const double& value, const Fraction& f)
+bool ariel::operator<(const double& value, const Fraction& fraction)
 {
-     return Fraction::fractionFromDouble(value) < f;
+     return Fraction::fractionFromDouble(value) < fraction;
 }
 
 
-bool ariel::operator>(const Fraction& f1, const Fraction& f2)
+bool ariel::operator>(const Fraction& frac1, const Fraction& frac2)
 {
-     return f1._numerator * f2._denominator > f1._denominator * f2._numerator;
+     return frac1._numerator * frac2._denominator > frac1._denominator * frac2._numerator;
 }
 
 
-bool ariel::operator>(const Fraction& f, const double& value)
+bool ariel::operator>(const Fraction& fraction, const double& value)
 {
-     return f > Fraction::fractionFromDouble(value);
+     return fraction > Fraction::fractionFromDouble(value);
 }
 
 
-bool ariel::operator>(const double& value, const Fraction& f)
+bool ariel::operator>(const double& value, const Fraction& fraction)
 {
-     return Fraction::fractionFromDouble(value) > f;
+     return Fraction::fractionFromDouble(value) > fraction;
 }
 
 
-bool ariel::operator<=(const Fraction& f1, const Fraction& f2)
+bool ariel::operator<=(const Fraction& frac1, const Fraction& frac2)
 {
-    return f1 < f2 || f1 == f2;
+    return frac1 < frac2 || frac1 == frac2;
 }
 
 
-bool ariel::operator<=(const Fraction& f, const double& value)
+bool ariel::operator<=(const Fraction& fraction, const double& value)
 {
-    return f <= Fraction::fractionFromDouble(value);
+    return fraction <= Fraction::fractionFromDouble(value);
 }
 
 
-bool ariel::operator<=(const double& value, const Fraction& f)
+bool ariel::operator<=(const double& value, const Fraction& fraction)
 {
-    return Fraction::fractionFromDouble(value) <= f;
+    return Fraction::fractionFromDouble(value) <= fraction;
 }
 
 
-bool ariel::operator>=(const Fraction& f1, const Fraction& f2)
+bool ariel::operator>=(const Fraction& frac1, const Fraction& frac2)
 {
-    return f1 > f2 || f1 == f2;
+    return frac1 > frac2 || frac1 == frac2;
 }
 
 
-bool ariel::operator>=(const Fraction& f, const double& value)
+bool ariel::operator>=(const Fraction& fraction, const double& value)
 {
-    return f >= Fraction::fractionFromDouble(value);
+    return fraction >= Fraction::fractionFromDouble(value);
 }
 
 
-bool ariel::operator>=(const double& value, const Fraction& f)
+bool ariel::operator>=(const double& value, const Fraction& fraction)
 {
-    return Fraction::fractionFromDouble(value) >= f;
+    return Fraction::fractionFromDouble(value) >= fraction;
 }
 
 
-Fraction& ariel::operator++(Fraction& f)
+Fraction& ariel::operator++(Fraction& fraction)
 {
-    f._numerator += f._denominator;
-    return f;
+    fraction._numerator += fraction._denominator;
+    return fraction;
 }
 
 
-Fraction& ariel::operator++(Fraction& f, int)
+Fraction& ariel::operator++(Fraction& fraction, int)
 {
-    f._numerator += f._denominator;
-    return f;
+    fraction._numerator += fraction._denominator;
+    return fraction;
 }
 
 
-Fraction& ariel::operator--(Fraction& f)
+Fraction& ariel::operator--(Fraction& fraction)
 {
-    f._numerator -= f._denominator;
-    return f;
+    fraction._numerator -= fraction._denominator;
+    return fraction;
 }
 
 
-Fraction& ariel::operator--(Fraction& f, int)
+Fraction& ariel::operator--(Fraction& fraction, int)
 {
-    f._numerator -= f._denominator;
-    return f;
+    fraction._numerator -= fraction._denominator;
+    return fraction;
 }
 
 
-ostream& ariel::operator<<(ostream& s, const Fraction& fraction)
+ostream& ariel::operator<<(ostream& output, const Fraction& fraction)
 {
-    return s << fraction._numerator << "/" << fraction._denominator;
+    return output << fraction._numerator << "/" << fraction._denominator;
 }
 
 
-istream& ariel::operator>>(istream& s, Fraction& fraction)
+istream& ariel::operator>>(istream& input, Fraction& fraction)
 {
-    return s >> fraction._numerator >> fraction._denominator;
+    return input >> fraction._numerator >> fraction._denominator;
 }
