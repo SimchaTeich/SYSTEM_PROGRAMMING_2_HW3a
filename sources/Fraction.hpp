@@ -123,6 +123,12 @@ namespace ariel
         friend bool operator>=(const Fraction& f, const double& value);
         friend bool operator>=(const double& value, const Fraction& f);
 
+        /*
+        overloading operator++
+        */
+        void operator++();    // pre
+        void operator++(int); // post
+
 
         /*
         Prints Fraction object into output stream.

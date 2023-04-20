@@ -246,6 +246,18 @@ bool ariel::operator>=(const double& value, const Fraction& f)
 }
 
 
+void Fraction::operator++()
+{
+    _numerator += _denominator;
+}
+
+
+void Fraction::operator++(int)
+{
+    _numerator += _denominator;
+}
+
+
 ostream& ariel::operator<<(ostream& s, const Fraction& fraction)
 {
     return s << fraction._numerator << "/" << fraction._denominator;
