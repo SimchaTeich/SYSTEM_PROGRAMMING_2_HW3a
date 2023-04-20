@@ -126,8 +126,8 @@ namespace ariel
         /*
         overloading operator++
         */
-        void operator++();    // pre
-        void operator++(int); // post
+        friend Fraction& operator++(Fraction& f);      // pre
+        friend Fraction& operator++(Fraction& f, int); // post
 
 
         /*

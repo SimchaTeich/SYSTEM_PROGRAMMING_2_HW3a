@@ -246,15 +246,17 @@ bool ariel::operator>=(const double& value, const Fraction& f)
 }
 
 
-void Fraction::operator++()
+Fraction& ariel::operator++(Fraction& f)
 {
-    _numerator += _denominator;
+    f._numerator += f._denominator;
+    return f;
 }
 
 
-void Fraction::operator++(int)
+Fraction& ariel::operator++(Fraction& f, int)
 {
-    _numerator += _denominator;
+    f._numerator += f._denominator;
+    return f;
 }
 
 
