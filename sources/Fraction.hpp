@@ -26,14 +26,14 @@ namespace ariel
 
 
         /*
-        Create a reduced Fraction according to a double.
+        Create a reduced Fraction according to a float.
         (up to 3 digits beyond the desimal point for acuracy)
         For example: 12.34 --> Fraction(1234/100) --> Fraction(617/50)
                      0.567 --> Fractiob(567/1000) --> Fraction(567/1000)
-        input: double
+        input: float
         output: reduced Fraction
         */
-        static Fraction fractionFromDouble(double value);
+        static Fraction fractionFromFloat(float value);
 
     public:
         /*
@@ -53,8 +53,8 @@ namespace ariel
         note: the new Fraction will return will be in reduced form.
         */
         friend Fraction operator+(const Fraction& frac1, const Fraction& frac2);
-        friend Fraction operator+(const Fraction& fraction, const double& value);
-        friend Fraction operator+(const double& value, const Fraction& fraction);
+        friend Fraction operator+(const Fraction& fraction, const float& value);
+        friend Fraction operator+(const float& value, const Fraction& fraction);
 
 
         /*
@@ -62,8 +62,8 @@ namespace ariel
         note: the new Fraction will return will be in reduced form.
         */
         friend Fraction operator-(const Fraction& frac1, const Fraction& frac2);
-        friend Fraction operator-(const Fraction& fraction, const double& value);
-        friend Fraction operator-(const double& value, const Fraction& fraction);
+        friend Fraction operator-(const Fraction& fraction, const float& value);
+        friend Fraction operator-(const float& value, const Fraction& fraction);
 
 
         /*
@@ -71,8 +71,8 @@ namespace ariel
         note: the new Fraction will return will be in reduced form.
         */
         friend Fraction operator*(const Fraction& frac1, const Fraction& frac2);
-        friend Fraction operator*(const Fraction& fraction, const double& value);
-        friend Fraction operator*(const double& value, const Fraction& fraction);
+        friend Fraction operator*(const Fraction& fraction, const float& value);
+        friend Fraction operator*(const float& value, const Fraction& fraction);
 
 
         /*
@@ -80,8 +80,8 @@ namespace ariel
         note: the new Fraction will return will be in reduced form.
         */
         friend Fraction operator/(const Fraction& frac1, const Fraction& frac2);
-        friend Fraction operator/(const Fraction& fraction, const double& value);
-        friend Fraction operator/(const double& value, const Fraction& fraction);
+        friend Fraction operator/(const Fraction& fraction, const float& value);
+        friend Fraction operator/(const float& value, const Fraction& fraction);
 
 
        /*
@@ -89,40 +89,40 @@ namespace ariel
         note: fraction 1/2 and fraction 2/4 are equals.
         */
         friend bool operator==(const Fraction& frac1, const Fraction& frac2);
-        friend bool operator==(const Fraction& fraction, const double& value);
-        friend bool operator==(const double& value, const Fraction& fraction);
+        friend bool operator==(const Fraction& fraction, const float& value);
+        friend bool operator==(const float& value, const Fraction& fraction);
         
         
         /*
         overloading operator<
         */
         friend bool operator<(const Fraction& frac1, const Fraction& frac2);
-        friend bool operator<(const Fraction& fraction, const double& value);
-        friend bool operator<(const double& value, const Fraction& fraction);
+        friend bool operator<(const Fraction& fraction, const float& value);
+        friend bool operator<(const float& value, const Fraction& fraction);
 
 
         /*
         overloading operator>
         */
         friend bool operator>(const Fraction& frac1, const Fraction& frac2);
-        friend bool operator>(const Fraction& fraction, const double& value);
-        friend bool operator>(const double& value, const Fraction& fraction);
+        friend bool operator>(const Fraction& fraction, const float& value);
+        friend bool operator>(const float& value, const Fraction& fraction);
         
         
         /*
         overloading operator<=
         */
         friend bool operator<=(const Fraction& frac1, const Fraction& frac2);
-        friend bool operator<=(const Fraction& fraction, const double& value);
-        friend bool operator<=(const double& value, const Fraction& fraction);
+        friend bool operator<=(const Fraction& fraction, const float& value);
+        friend bool operator<=(const float& value, const Fraction& fraction);
 
 
         /*
         overloading operator>=
         */
         friend bool operator>=(const Fraction& frac1, const Fraction& frac2);
-        friend bool operator>=(const Fraction& fraction, const double& value);
-        friend bool operator>=(const double& value, const Fraction& fraction);
+        friend bool operator>=(const Fraction& fraction, const float& value);
+        friend bool operator>=(const float& value, const Fraction& fraction);
 
         /*
         overloading operator++

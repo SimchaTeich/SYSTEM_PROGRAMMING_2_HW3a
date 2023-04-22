@@ -33,7 +33,7 @@ void Fraction::recude()
 }
 
 
-Fraction Fraction::fractionFromDouble(double value)
+Fraction Fraction::fractionFromFloat(float value)
 {
     int denominator = 1000;
     value *= 1000;
@@ -69,13 +69,13 @@ Fraction ariel::operator+(const Fraction& frac1, const Fraction& frac2)
 }
 
 
-Fraction ariel::operator+(const Fraction& fraction, const double& value)
+Fraction ariel::operator+(const Fraction& fraction, const float& value)
 {
-    return fraction + Fraction::fractionFromDouble(value);
+    return fraction + Fraction::fractionFromFloat(value);
 }
 
 
-Fraction ariel::operator+(const double& value, const Fraction& fraction)
+Fraction ariel::operator+(const float& value, const Fraction& fraction)
 {
     return  fraction + value;
 }
@@ -94,15 +94,15 @@ Fraction ariel::operator-(const Fraction& frac1, const Fraction& frac2)
 }
 
 
-Fraction ariel::operator-(const Fraction& fraction, const double& value)
+Fraction ariel::operator-(const Fraction& fraction, const float& value)
 {
-    return fraction - Fraction::fractionFromDouble(value);
+    return fraction - Fraction::fractionFromFloat(value);
 }
 
 
-Fraction ariel::operator-(const double& value, const Fraction& fraction)
+Fraction ariel::operator-(const float& value, const Fraction& fraction)
 {
-    return  Fraction::fractionFromDouble(value) - fraction;
+    return  Fraction::fractionFromFloat(value) - fraction;
 }
 
 
@@ -119,13 +119,13 @@ Fraction ariel::operator*(const Fraction& frac1, const Fraction& frac2)
 }
 
 
-Fraction ariel::operator*(const Fraction& fraction, const double& value)
+Fraction ariel::operator*(const Fraction& fraction, const float& value)
 {
-    return fraction * Fraction::fractionFromDouble(value);
+    return fraction * Fraction::fractionFromFloat(value);
 }
 
 
-Fraction ariel::operator*(const double& value, const Fraction& fraction)
+Fraction ariel::operator*(const float& value, const Fraction& fraction)
 {
     return  fraction * value;
 }
@@ -142,15 +142,15 @@ Fraction ariel::operator/(const Fraction& frac1, const Fraction& frac2)
 }
 
 
-Fraction ariel::operator/(const Fraction& fraction, const double& value)
+Fraction ariel::operator/(const Fraction& fraction, const float& value)
 {
-    return fraction / Fraction::fractionFromDouble(value);
+    return fraction / Fraction::fractionFromFloat(value);
 }
 
 
-Fraction ariel::operator/(const double& value, const Fraction& fraction)
+Fraction ariel::operator/(const float& value, const Fraction& fraction)
 {
-    return  Fraction::fractionFromDouble(value) / fraction;
+    return  Fraction::fractionFromFloat(value) / fraction;
 }
 
 
@@ -167,13 +167,13 @@ bool ariel::operator==(const Fraction& frac1, const Fraction& frac2)
 }
 
 
-bool ariel::operator==(const Fraction& fraction, const double& value)
+bool ariel::operator==(const Fraction& fraction, const float& value)
 {
-    return fraction == Fraction::fractionFromDouble(value);
+    return fraction == Fraction::fractionFromFloat(value);
 }
 
 
-bool ariel::operator==(const double& value, const Fraction& fraction)
+bool ariel::operator==(const float& value, const Fraction& fraction)
 {
     return fraction == value;
 }
@@ -185,15 +185,15 @@ bool ariel::operator<(const Fraction& frac1, const Fraction& frac2)
 }
 
 
-bool ariel::operator<(const Fraction& fraction, const double& value)
+bool ariel::operator<(const Fraction& fraction, const float& value)
 {
-     return fraction < Fraction::fractionFromDouble(value);
+     return fraction < Fraction::fractionFromFloat(value);
 }
 
 
-bool ariel::operator<(const double& value, const Fraction& fraction)
+bool ariel::operator<(const float& value, const Fraction& fraction)
 {
-     return Fraction::fractionFromDouble(value) < fraction;
+     return Fraction::fractionFromFloat(value) < fraction;
 }
 
 
@@ -203,15 +203,15 @@ bool ariel::operator>(const Fraction& frac1, const Fraction& frac2)
 }
 
 
-bool ariel::operator>(const Fraction& fraction, const double& value)
+bool ariel::operator>(const Fraction& fraction, const float& value)
 {
-     return fraction > Fraction::fractionFromDouble(value);
+     return fraction > Fraction::fractionFromFloat(value);
 }
 
 
-bool ariel::operator>(const double& value, const Fraction& fraction)
+bool ariel::operator>(const float& value, const Fraction& fraction)
 {
-     return Fraction::fractionFromDouble(value) > fraction;
+     return Fraction::fractionFromFloat(value) > fraction;
 }
 
 
@@ -221,15 +221,15 @@ bool ariel::operator<=(const Fraction& frac1, const Fraction& frac2)
 }
 
 
-bool ariel::operator<=(const Fraction& fraction, const double& value)
+bool ariel::operator<=(const Fraction& fraction, const float& value)
 {
-    return fraction <= Fraction::fractionFromDouble(value);
+    return fraction <= Fraction::fractionFromFloat(value);
 }
 
 
-bool ariel::operator<=(const double& value, const Fraction& fraction)
+bool ariel::operator<=(const float& value, const Fraction& fraction)
 {
-    return Fraction::fractionFromDouble(value) <= fraction;
+    return Fraction::fractionFromFloat(value) <= fraction;
 }
 
 
@@ -239,15 +239,15 @@ bool ariel::operator>=(const Fraction& frac1, const Fraction& frac2)
 }
 
 
-bool ariel::operator>=(const Fraction& fraction, const double& value)
+bool ariel::operator>=(const Fraction& fraction, const float& value)
 {
-    return fraction >= Fraction::fractionFromDouble(value);
+    return fraction >= Fraction::fractionFromFloat(value);
 }
 
 
-bool ariel::operator>=(const double& value, const Fraction& fraction)
+bool ariel::operator>=(const float& value, const Fraction& fraction)
 {
-    return Fraction::fractionFromDouble(value) >= fraction;
+    return Fraction::fractionFromFloat(value) >= fraction;
 }
 
 
