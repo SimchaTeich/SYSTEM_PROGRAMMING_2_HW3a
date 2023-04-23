@@ -21,7 +21,7 @@ TEST_CASE("Telescoping series")
     Fraction seriesSum1(1,2);
     Fraction seriesSum2(1,2);
 
-    /* 1/(1*2) + 1/(2*3) + ... + 1/n*(n+1) = n/n+1 */ 
+    /* 1/(1×2) + 1/(2×3) + ... + 1/n×(n+1) = n/n+1 */ 
     for(int i = 2; i <= n; i++)
     {
         seriesSum1 = seriesSum1 + Fraction(1, i*(i+1));
@@ -29,7 +29,7 @@ TEST_CASE("Telescoping series")
     CHECK_EQ(seriesSum1 == Fraction(n, n+1), true);
 
     
-    /* 1/2 + 2/3 + 3/4 + 4/5 ... + n/n+1 = 1/n+1 */
+    /* 1/2 × 2/3 × 3/4 × 4/5 ... × n/n+1 = 1/n+1 */
     for(int i = 2; i <= n; i++)
     {
         seriesSum2 = seriesSum2 * Fraction(i, i+1);
